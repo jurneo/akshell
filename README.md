@@ -1,4 +1,6 @@
-akshell.github.io
+Akshell Jurneo
 ==================
 
-web hosting for my research work
+Personal web hosting for my work
+
+https://jurneo.github.io/akshell

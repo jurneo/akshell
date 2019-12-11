@@ -31,35 +31,17 @@ function setup()
   textSize(15);
   noStroke();
   frameRate(5); 
-
   angleMode(DEGREES);
-
   xl = 50;
   yl = 260 - 100;
-  mx = 500;
+  mx = 400;
   my = 100 * 1.5 - 100;
   lx = 170;
-  fl = 700;
+  fl = 600;
   ml = 200 * 1.1;
-
-  // createButton('save')
-  // .position(10, 470)
-  // .mousePressed(function() {
-  // saveJSON(json, 'lion.json');
-  // // localStorage.setItem('saveData', JSON.stringify(json));
-  // });
-
-  // createButton('animate')
-  // .position(90, 470)
-  // .mousePressed(function() {
-  //   pause = !pause;
-  // });
-
   ps.push(createVector(0,0));  
-
   pause = false;
   draw();
-  //pause = true;
 }
 
 function draw() 
@@ -128,10 +110,6 @@ function update_plot()
   cx = mr.mag() * sin(sg); // max displacement
   yv = mr.x / 6.5;
 
-  // fill(50, 70, 120, 150);
-  // strokeWeight(5);
-  // line(mx, my, mx + mr.x, my + mr.y);
-
   var i = x.length;
   if (i<n)
   {
@@ -149,11 +127,7 @@ function update_plot()
   var mr2 = p5.Vector.sub(m2,m1);
 
   var wd = 10;
-  // if ((mr2.x>-wd) && (mr2.x<wd))
-  // {
-  //   y1[i] = y0[i];
-  // }
-  // else
+
   if (Math.abs(cg)>2.0)
   {
     y1[i] = 2 * cos(az) * y0[i];
@@ -161,17 +135,6 @@ function update_plot()
   else
   {
     y1[i] = y0[i];
-  }
-
-  if (cor)
-  {
-    // if ((mr2.x>-wd) && (mr2.x<wd))
-    // {
-    // }
-    // else
-    // {
-    //   y1[i] = y1[i] / 2;
-    // }
   }
 
   if (i>=n)
@@ -241,8 +204,7 @@ function draw_laser(px, py)
   {
     if (ps[i].x == 0)
       continue;
-    // if (Math.abs(py-ps[i].y)<5)
-    //   continue;
+
     if ((ps[i+1].y+7)>py && (ps[i].y-7)<py)    
       continue;
     if ((ps[i+1].y-7)<py && (ps[i].y+7)>py)
